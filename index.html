@@ -1,186 +1,291 @@
 <!DOCTYPE html>
-<html>
-<!--buatan zaidan-->
+<html lang="en">
 <head>
-      <title>Web Portfolio</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"><link rel="stylesheet" type="text/css" href="css/style.css">   
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Zaidan</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Navbar Customization */
+        .navbar {
+            background-color: #00b8e6;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        /* Hero Section Styling */
+        .hero-section {
+            text-align: center;
+            padding: 30px 5px;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+        }
+        /* About Section */
+        .about-section img {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            margin: auto;
+        }
+        /* Portfolio */
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .portfolio-btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .portfolio-item:hover .portfolio-btn {
+            opacity: 1;
+        }
+        
+        .contact-icon {
+            display: inline-block;
+            background-color: #00b8e6; /* Warna latar belakang */
+            border-radius: 50%; /* Membuat lingkaran */
+            padding: 15px; /* Mengatur jarak di dalam lingkaran */
+            margin: 10px; /* Jarak antar ikon */
+            color: white; /* Warna ikon */
+            text-decoration: none; /* Menghilangkan garis bawah pada link */
+            transition: background-color 0.3s ease; /* Efek transisi saat hover */
+            font-size: 1.2rem; /* Mengatur ukuran ikon */
+        }
+
+        .contact-icon:hover {
+            background-color: #008c99; /* Warna latar belakang saat hover */
+        }
+
+        .contact-icon i {
+            display: block;
+            text-align: center;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: #303030;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        /* Testimonial Section */
+        .testimonial {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .testimonial p {
+            font-style: italic;
+        }
+        .testimonial small {
+            font-weight: bold;
+            color: #0a0a0a;
+        }
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+    </style>
 </head>
 <body>
-	<!--awal navbar-->
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #00b8e6
-;">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Zaidan</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#About">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Contact">Contact</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#Portfolio">Portfolio</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!--akhir navbar-->
-<!--awal about-->
-<div class="container-fluid py-5" id="About">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-                <h1 class="position-absolute text-uppercase" style="color:black;">About Me</h1>
+            <a class="navbar-brand" href="#">Zaidan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+                </ul>
             </div>
-            <!--buatan zaidan-->
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="img/zaidan.jpg" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <h3 class="mb-4">Kelas XI-PPLG</h3>
-                    <p>Nama saya Zaidan Rayiq Fayyadh Abdullah saya bersekolah di SMKN 1 Ciamis kelas XI-PPLG.Hobi saya bermain bola dan juga bermain game,Cita-cita saya jadi Programmer.</p>
-                    <div class="row mb-3">
-                        <div class="col-sm-6 py-2"><h6>Nama: <span class="text-secondary">Zaidan Rasyiq Fayyadh Abdullah</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Tanggal Lahir: <span class="text-secondary">17 Februari 2006</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Kelas: <span class="text-secondary">XI-PPLG</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Phone: <span class="text-secondary">085871268890</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">zaidanrasyiq2@gmail.com</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">Radix Herba Center,Sindangrasa,Kabupaten Ciamis,Kecamatan Ciamis</span></h6></div>
-                    </div>
-                </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section bg-light">
+        <h1>Selamat Datang di Portofolio Saya</h1>
+    </div>
+
+<!-- About Section -->
+<div class="container my-5" id="About">
+    <h2 class="text-center mb-4">Tentang Saya</h2>
+    <div class="row align-items-center">
+        <!-- Bagian Gambar -->
+        <div class="col-md-5 text-center mb-4 mb-md-0">
+            <img src="img/zaidan.jpg" alt="Zaidan" class="img-fluid shadow-lg" style="max-width: 350px;">
+        </div>
+        <!-- Bagian Teks -->
+        <div class="col-md-7">
+            <p class="mb-4" style="text-align: justify;">
+                Saya adalah <strong>fresh graduate</strong> yang berdedikasi di bidang administrasi dan pengembangan web, dengan antusiasme tinggi untuk belajar dan berkembang di dunia kerja. Dengan latar belakang akademik yang kuat dalam pengembangan web berbasis WordPress dan Laravel, saya memiliki dasar keterampilan teknis yang solid untuk membangun situs web yang responsif, fungsional, dan sesuai kebutuhan pengguna.
+            </p>            
+            <p class="mb-4" style="text-align: justify;">
+                Saya adalah individu yang detail-oriented, kreatif, dan memiliki kemampuan komunikasi yang baik, serta berkomitmen untuk terus belajar mengikuti perkembangan teknologi terbaru.
+            </p>
+            <ul class="list-unstyled">
+                <li><strong>Nama Lengkap:</strong> Zaidan Rayiq Fayyadh Abdullah</li>
+                <li><strong>Tanggal Lahir:</strong> 17 Februari 2006</li>
+                <li><strong>Telepon:</strong> +6285871268890</li>
+                <li><strong>Email:</strong> <a href="mailto:zaidanrasyiq2@gmail.com">zaidanrasyiq2@gmail.com</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Section -->
+<div class="container my-5" id="Portfolio">
+    <h2 class="text-center">Portofolio</h2>
+    <div class="row">
+        <!-- Portfolio Item 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="portfolio-item">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                    <img src="img/p1.png" alt="Project 1" class="img-fluid rounded shadow">
+                </a>
+            </div>
+        </div>
+        <!-- Portfolio Item 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="portfolio-item">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                    <img src="img/p3.png" alt="Project 2" class="img-fluid rounded shadow">
+                </a>
+            </div>
+        </div>
+        <!-- Portfolio Item 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="portfolio-item">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                    <img src="img/p2.png" alt="Project 3" class="img-fluid rounded shadow">
+                </a>
+            </div>
+        </div>
+        <!-- Portfolio Item 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="portfolio-item">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                    <img src="img/p4.png" alt="Project 4" class="img-fluid rounded shadow">
+                </a>
             </div>
         </div>
     </div>
-    <!--akhir about-->
-    <!--awal kontak-->
-     <div class="container-fluid py-5" id="Contact" style="align-content: center;">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
-                <h1 class="position-absolute text-uppercase">Contact Me</h1>
-            </div>
-            <section class="service">
-     <!--buatan zaidan-->
-<div class="contact" id="Contact">
-  <div class="row" data-aos="fade-in">
-
-          <div class="col text-">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Alamat:</h4>
-                <p>Radix Herba Center, Sindangrasa, Ciamis Regency, West Java, Indonesia</p>
-              </div>
-
-              <a style="text-decoration: none;" href="mailto:zaidanrasyiq2@gmail.com">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>zaidanrasyiq2@gmail.com</p>
-              </a>
-
-              <a style="text-decoration: none;" href="https://api.whatsapp.com/send?phone=6285871268890"><div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Whatsapp:</h4>
-                <p>+62 85871268890</p>
-              </div></a>
-
-              <iframe src="https://maps.google.com/maps?q=Radix,%20Herba,%20Center%20Ciamis Regency,%20West%20Java%20Indonesia&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div>
-          </div>
 </div>
-</div>
-</div>
-    <!--akhir kontak-->
-    <!--awal portfolio-->
-     <div class="container-fluid pt-5 pb-3" id="Portfolio">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Gallery</h1>
-                <h1 class="position-absolute text-uppercase">My Portfolio</h1>
-            </div>
-            <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-1.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-1.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div><!--buatan zaidan-->
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-2.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-2.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-3.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-3.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-4.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-4.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2"><!--buatan zaidan-->
-                        <img class="img-fluid rounded w-100" src="img/portfolio-5.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-5.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-6.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-6.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
+<!-- Modal 1 -->
+<div class="modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="img/p1.png" alt="Project 1" class="img-fluid">
             </div>
         </div>
     </div>
-<!--akhir portfolio-->
-<!--awal Copyright-->
- <div class="footer-basic">
-        <footer>
-            <h1 class="copyright">Copyright By © Zaidan Rayiq</h1>
-        </footer>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="img/p3.png" alt="Project 2" class="img-fluid">
+            </div>
+        </div>
     </div>
-  <!--Akhir copyright-->
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="img/p2.png" alt="Project 3" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModalLabel4" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="img/p4.png" alt="Project 4" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5" id="Keahlian">
+    <h2 class="text-center">Keahlian</h2>
+    <ul>
+        <li>HTML & CSS</li>
+        <div class="progress mb-3">
+            <div class="progress-bar bg-info" style="width: 80%;">80%</div>
+        </div>
+        <li>PHP</li>
+        <div class="progress mb-3">
+            <div class="progress-bar bg-info" style="width: 85%;">85%</div>
+        </div>
+        <li>Laravel</li>
+        <div class="progress mb-3">
+            <div class="progress-bar bg-info" style="width: 70%;">70%</div>
+        </div>
+        <li>Microsoft Office</li>
+        <div class="progress mb-3">
+            <div class="progress-bar bg-info" style="width: 75%;">75%</div>
+        </div>
+    </ul>
+</div>
+        
+  <!-- Footer -->
+<footer>
+    <div class="container">
+        <h6>Copyright &copy; 2024 Zaidan Rayiq. All Rights Reserved.</h6>
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <a href="mailto:zaidanrasyiq2@gmail.com" class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+6285871268890" class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="contact-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="contact-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<!--buatan zaidan-->
 </html>
