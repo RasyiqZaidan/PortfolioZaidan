@@ -104,7 +104,20 @@
                 font-size: 2.5rem;
             }
         }
-        
+        @keyframes fillAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.progress-bar {
+    animation: fillAnimation 2s ease-out;
+    animation-fill-mode: forwards;
+}
+
     </style>
 </head>
 <body>
@@ -246,19 +259,19 @@
     <ul>
         <li>HTML & CSS</li>
         <div class="progress mb-3">
-            <div class="progress-bar bg-info" style="width: 80%;">80%</div>
+            <div class="progress-bar bg-info" data-percentage="80">80%</div>
         </div>
         <li>PHP</li>
         <div class="progress mb-3">
-            <div class="progress-bar bg-info" style="width: 85%;">85%</div>
+            <div class="progress-bar bg-info" data-percentage="85">85%</div>
         </div>
         <li>Laravel</li>
         <div class="progress mb-3">
-            <div class="progress-bar bg-info" style="width: 70%;">70%</div>
+            <div class="progress-bar bg-info" data-percentage="70">70%</div>
         </div>
         <li>Microsoft Office</li>
         <div class="progress mb-3">
-            <div class="progress-bar bg-info" style="width: 75%;">75%</div>
+            <div class="progress-bar bg-info" data-percentage="75">75%</div>
         </div>
     </ul>
 </div>
@@ -285,7 +298,16 @@
 </div>
     </div>
 </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const progressBars = document.querySelectorAll('.progress-bar');
+    progressBars.forEach(bar => {
+        const percentage = bar.getAttribute('data-percentage');
+        bar.style.width = percentage + '%';
+    });
+});
 
+</script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
