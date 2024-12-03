@@ -160,30 +160,61 @@
     transition: width 4s ease-out;
     width: 0; /* Awalnya lebar 0 */
 }
-/* Timeline Styling */
-.timeline {
-    position: relative;
-    padding: 20px 0;
+        .container {
+    font-family: Arial, sans-serif;
 }
 
-.timeline-item {
-    margin-bottom: 30px;
+h2 {
+    font-weight: bold;
 }
 
-.timeline-item h4 {
-    font-size: 1.5rem;
-    color: #00b8e6;
+.experience-section {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
 }
 
-.timeline-item h6 {
-    font-size: 1rem;
-    color: gray;
+.experience-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
-.timeline-item p {
-    font-size: 1rem;
-    text-align: justify;
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
+
+.experience-header span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+.toggle-btn.open {
+    transform: rotate(180deg);
+}
+
+.experience-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.experience-content ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
     </style>
 </head>
 <body>
@@ -240,30 +271,70 @@
         </div>
     </div>
 </div>
-<!-- Pengalaman Section -->
-<div class="container my-5" id="Experience">
+<div class="container my-5" id="pengalaman">
     <h2 class="text-center mb-4">Pengalaman</h2>
-    <div class="timeline">
-        <!-- Pengalaman 1 -->
-        <div class="timeline-item">
-            <h4>Web Developer Intern</h4>
-            <h6><i class="fas fa-calendar-alt"></i> Januari 2023 - Juni 2023</h6>
-            <p>
-                Bekerja sebagai intern di <strong>PT Digital Solusi</strong>, mengembangkan website berbasis Laravel dengan fokus pada 
-                sistem manajemen inventaris. Meningkatkan efisiensi sistem hingga 30%.
-            </p>
+    
+    <!-- Bagian Pendidikan -->
+    <div class="experience-section">
+        <div class="experience-header">
+            <img src="icons/education.png" alt="Pendidikan" class="icon">
+            <span>Pendidikan</span>
+            <button class="toggle-btn">▼</button>
         </div>
-        <!-- Pengalaman 2 -->
-        <div class="timeline-item">
-            <h4>Freelance Web Developer</h4>
-            <h6><i class="fas fa-calendar-alt"></i> Juli 2023 - Sekarang</h6>
-            <p>
-                Membantu berbagai UMKM mengembangkan website responsif menggunakan <strong>HTML, CSS, dan Laravel</strong>.
-                Hasil pekerjaan meliputi toko online, landing page, dan portofolio bisnis.
-            </p>
+        <div class="experience-content">
+            <ul>
+                <li><strong>SMA Negeri 1 Jakarta</strong> (2021 - 2024)</li>
+                <li><strong>SMP Negeri 3 Jakarta</strong> (2018 - 2021)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bagian Pekerjaan -->
+    <div class="experience-section">
+        <div class="experience-header">
+            <img src="icons/work.png" alt="Pekerjaan" class="icon">
+            <span>Pekerjaan</span>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="experience-content">
+            <ul>
+                <li><strong>Freelance Web Developer</strong> (2023 - Sekarang)</li>
+                <li><strong>Magang di PT Teknologi Nusantara</strong> (Juni - Agustus 2023)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bagian Organisasi -->
+    <div class="experience-section">
+        <div class="experience-header">
+            <img src="icons/organization.png" alt="Organisasi" class="icon">
+            <span>Organisasi</span>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="experience-content">
+            <ul>
+                <li><strong>Ketua OSIS</strong> di SMA Negeri 1 Jakarta (2023 - 2024)</li>
+                <li><strong>Anggota Klub IT</strong> di SMA Negeri 1 Jakarta (2022 - 2023)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bagian Pendidikan Nonformal -->
+    <div class="experience-section">
+        <div class="experience-header">
+            <img src="icons/nonformal-education.png" alt="Pendidikan Nonformal" class="icon">
+            <span>Pendidikan Nonformal</span>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="experience-content">
+            <ul>
+                <li><strong>Kursus Web Development</strong> di Dicoding (2022)</li>
+                <li><strong>Bootcamp Frontend</strong> di Udemy (2023)</li>
+            </ul>
         </div>
     </div>
 </div>
+
 <div class="container my-5" id="Keahlian">
     <h2 class="text-center">Keahlian</h2>
     <ul>
@@ -409,7 +480,17 @@
 </div>
     </div>
 </footer>
+    
 <script>
+    document.querySelectorAll('.experience-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const button = header.querySelector('.toggle-btn');
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        button.classList.toggle('open');
+    });
+});
+
     // Fungsi untuk mengecek apakah elemen terlihat di viewport
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
