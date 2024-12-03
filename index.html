@@ -24,6 +24,23 @@
     font-weight: bold;
     font-size: 1.2rem;
 }
+.badge {
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+    background-color: #0066cc;
+}
+
+.row .img-fluid {
+    transition: transform 0.3s ease;
+}
+
+.row .img-fluid:hover {
+    transform: scale(1.1);
+}
 
 /* Responsif: Ganti gambar dengan teks di layar kecil */
 @media (max-width: 768px) {
@@ -332,84 +349,67 @@ h2 {
     <div class="row mt-4">
         <!-- Soft Skills -->
         <div class="col-12">
-            <h4 class="fw-bold">Soft Skills</h4>
-            <div class="d-flex flex-wrap justify-content-start">
-                <p class="me-4"><span class="text-warning">✔</span> Public Speaking</p>
-                <p class="me-4"><span class="text-warning">✔</span> Researching</p>
-                <p class="me-4"><span class="text-warning">✔</span> Leadership</p>
-                <p><span class="text-warning">✔</span> Team Management</p>
+            <h4 class="fw-bold mb-3">Soft Skills</h4>
+            <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-primary text-white p-3 rounded">✔ Public Speaking</span>
+                <span class="badge bg-primary text-white p-3 rounded">✔ Researching</span>
+                <span class="badge bg-primary text-white p-3 rounded">✔ Leadership</span>
+                <span class="badge bg-primary text-white p-3 rounded">✔ Team Management</span>
             </div>
         </div>
         <hr>
         <!-- Hard Skills -->
-        <div class="col-12">
-            <h4 class="fw-bold">Hard Skills</h4>
-            <div class="d-flex flex-wrap justify-content-start">
-                <p class="me-4"><span class="text-warning">✔</span> UI/UX Design</p>
-                <p class="me-4"><span class="text-warning">✔</span> User Research</p>
-                <p class="me-4"><span class="text-warning">✔</span> Video Editing</p>
-                <p><span class="text-warning">✔</span> Graphic Design</p>
-                <p><span class="text-warning">✔</span> Data Analysis</p>
+        <div class="col-12 mt-4">
+            <h4 class="fw-bold mb-3">Hard Skills</h4>
+            <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-success text-white p-3 rounded">✔ UI/UX Design</span>
+                <span class="badge bg-success text-white p-3 rounded">✔ User Research</span>
+                <span class="badge bg-success text-white p-3 rounded">✔ Video Editing</span>
+                <span class="badge bg-success text-white p-3 rounded">✔ Graphic Design</span>
+                <span class="badge bg-success text-white p-3 rounded">✔ Data Analysis</span>
             </div>
         </div>
         <hr>
         <!-- Software Skills -->
-        <div class="col-12">
-            <h4 class="fw-bold">Software Skills</h4>
-            <div class="d-flex flex-wrap justify-content-start align-items-center">
-                <div class="me-4 text-center">
-                    <img src="img/html.png" alt="Html" style="width: 55px;">
-                    <p>Html</p>
+        <div class="col-12 mt-4">
+            <h4 class="fw-bold mb-3">Software Skills</h4>
+            <div class="row g-4">
+                <div class="col-6 col-md-3 text-center">
+                    <img src="img/html.png" alt="HTML" class="img-fluid" style="max-width: 70px;">
+                    <p>HTML</p>
                 </div>
-                <div class="me-4 text-center">
-                    <img src="img/css.png" alt="CSS" style="width: 40px;">
+                <div class="col-6 col-md-3 text-center">
+                    <img src="img/css.png" alt="CSS" class="img-fluid" style="max-width: 70px;">
                     <p>CSS</p>
                 </div>
-                <div class="me-4 text-center">
-                    <img src="img/js.png" alt="Java Script" style="width: 50px;">
-                    <p>Java Script</p>
+                <div class="col-6 col-md-3 text-center">
+                    <img src="img/js.png" alt="JavaScript" class="img-fluid" style="max-width: 70px;">
+                    <p>JavaScript</p>
                 </div>
-                <div class="text-center">
-                    <img src="img/php.png" alt="PHP" style="width: 80px;">
+                <div class="col-6 col-md-3 text-center">
+                    <img src="img/php.png" alt="PHP" class="img-fluid" style="max-width: 70px;">
                     <p>PHP</p>
                 </div>
-                <div class="text-center">
-                    <img src="img/laravel.png" alt="Laravel" style="width: 50px;">
+                <div class="col-6 col-md-3 text-center">
+                    <img src="img/laravel.png" alt="Laravel" class="img-fluid" style="max-width: 70px;">
                     <p>Laravel</p>
                 </div>
-                <div class="me-4 text-center">
-                    <img src="img/word.png" alt="Word" style="width: 80px;">
-                    <p>Word</p>
-                </div>
-                <div class="me-4 text-center">
-                    <img src="img/excel.png" alt="Excel" style="width: 80px;">
-                    <p>Excel</p>
-                </div>
-                <div class="me-4 text-center">
-                    <img src="img/ppt.png" alt="PPT" style="width: 80px;">
-                    <p>Power Point</p>
-                </div>
-                <div class="text-center">
-                    <img src="img/figma.png" alt="Figma" style="width: 30px;">
+                <div class="col-6 col-md-3 text-center">
+                    <img src="img/figma.png" alt="Figma" class="img-fluid" style="max-width: 70px;">
                     <p>Figma</p>
-                </div>                
-                <div class="text-center">
-                    <img src="img/ai.png" alt="Ai" style="width: 50px;">
-                    <p>Adobe Illustrator</p>
                 </div>
-                <div class="text-center">
-                    <img src="img/canva.png" alt="Canva" style="width: 50px;">
+                <div class="col-6 col-md-3 text-center">
+                    <img src="img/ai.png" alt="Adobe Illustrator" class="img-fluid" style="max-width: 70px;">
+                    <p>Illustrator</p>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <img src="img/canva.png" alt="Canva" class="img-fluid" style="max-width: 70px;">
                     <p>Canva</p>
                 </div>
-                <div class="text-center">
-                    <img src="img/capcut.png" alt="Capcut" style="width: 60px;">
-                    <p>Capcut</p>
-                </div>                
             </div>
         </div>
     </div>
 </div>
-
 
     <!-- Portfolio Section -->
 <div class="container my-5" id="Portfolio">
