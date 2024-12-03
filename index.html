@@ -55,9 +55,15 @@
 }
 
         /* Navbar Customization */
-        .navbar {
-            background-color: #00b8e6;
-        }
+       .navbar {
+    position: fixed; /* Navbar akan tetap di tempat */
+    top: 0; /* Menempel di bagian atas layar */
+    left: 0;
+    right: 0;
+    z-index: 1030; /* Agar tetap di atas elemen lainnya */
+    background-color: #00b8e6; /* Warna latar belakang */
+}
+
        .navbar-brand {
     display: flex;
     align-items: center;
