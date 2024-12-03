@@ -104,17 +104,45 @@
                 font-size: 2.5rem;
             }
         }
-        @keyframes fillAnimation {
+       @keyframes fill80 {
     from {
         width: 0;
     }
     to {
-        width: 100%;
+        width: 80%;
+    }
+}
+
+@keyframes fill85 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 85%;
+    }
+}
+
+@keyframes fill70 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 70%;
+    }
+}
+
+@keyframes fill75 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 75%;
     }
 }
 
 .progress-bar {
-    animation: fillAnimation 2s ease-out;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
 
@@ -257,22 +285,22 @@
 <div class="container my-5" id="Keahlian">
     <h2 class="text-center">Keahlian</h2>
     <ul>
-        <li>HTML & CSS</li>
-        <div class="progress mb-3">
-            <div class="progress-bar bg-info" data-percentage="80">80%</div>
-        </div>
-        <li>PHP</li>
-        <div class="progress mb-3">
-            <div class="progress-bar bg-info" data-percentage="85">85%</div>
-        </div>
-        <li>Laravel</li>
-        <div class="progress mb-3">
-            <div class="progress-bar bg-info" data-percentage="70">70%</div>
-        </div>
-        <li>Microsoft Office</li>
-        <div class="progress mb-3">
-            <div class="progress-bar bg-info" data-percentage="75">75%</div>
-        </div>
+      <li>HTML & CSS</li>
+<div class="progress mb-3">
+    <div class="progress-bar bg-info" style="animation-name: fill80;">80%</div>
+</div>
+<li>PHP</li>
+<div class="progress mb-3">
+    <div class="progress-bar bg-info" style="animation-name: fill85;">85%</div>
+</div>
+<li>Laravel</li>
+<div class="progress mb-3">
+    <div class="progress-bar bg-info" style="animation-name: fill70;">70%</div>
+</div>
+<li>Microsoft Office</li>
+<div class="progress mb-3">
+    <div class="progress-bar bg-info" style="animation-name: fill75;">75%</div>
+</div>
     </ul>
 </div>
         
