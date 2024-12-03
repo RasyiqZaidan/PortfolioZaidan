@@ -120,18 +120,24 @@
                 font-size: 2.5rem;
             }
         }
-    #Keahlian h4 {
-        font-weight: bold;
+#Keahlian h4 {
         margin-bottom: 15px;
     }
 
-    #Keahlian ul {
-        list-style-type: square; /* Tanda bullet berbentuk kotak */
-        padding-left: 20px;
+    #Keahlian p {
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: #333;
     }
 
-    #Keahlian ul li {
-        margin-bottom: 10px;
+    #Keahlian img {
+        display: block;
+        margin: 0 auto 5px;
+    }
+
+    hr {
+        border: 1px solid #ccc;
+        margin: 20px 0;
     }
 h2 {
     font-weight: bold;
@@ -323,39 +329,55 @@ h2 {
 
 <div class="container my-5" id="Keahlian">
     <h2 class="text-center">Keahlian</h2>
-    <div class="row">
+    <div class="row mt-4">
         <!-- Soft Skills -->
-        <div class="col-md-4">
-            <h4 class="text-primary">Soft Skills</h4>
-            <ul>
-                <li>Komunikasi Efektif</li>
-                <li>Kreativitas</li>
-                <li>Pemecahan Masalah</li>
-                <li>Kepemimpinan</li>
-            </ul>
+        <div class="col-12">
+            <h4 class="fw-bold">Soft Skills</h4>
+            <div class="d-flex flex-wrap justify-content-start">
+                <p class="me-4"><span class="text-warning">✔</span> Public Speaking</p>
+                <p class="me-4"><span class="text-warning">✔</span> Researching</p>
+                <p class="me-4"><span class="text-warning">✔</span> Leadership</p>
+                <p><span class="text-warning">✔</span> Team Management</p>
+            </div>
         </div>
+        <hr>
         <!-- Hard Skills -->
-        <div class="col-md-4">
-            <h4 class="text-success">Hard Skills</h4>
-            <ul>
-                <li>HTML & CSS</li>
-                <li>PHP</li>
-                <li>Laravel</li>
-                <li>Database Management</li>
-            </ul>
+        <div class="col-12">
+            <h4 class="fw-bold">Hard Skills</h4>
+            <div class="d-flex flex-wrap justify-content-start">
+                <p class="me-4"><span class="text-warning">✔</span> UI/UX Design</p>
+                <p class="me-4"><span class="text-warning">✔</span> User Research</p>
+                <p class="me-4"><span class="text-warning">✔</span> Video Editing</p>
+                <p><span class="text-warning">✔</span> Graphic Design</p>
+                <p><span class="text-warning">✔</span> Data Analysis</p>
+            </div>
         </div>
+        <hr>
         <!-- Software Skills -->
-        <div class="col-md-4">
-            <h4 class="text-info">Software Skills</h4>
-            <ul>
-                <li>Microsoft Office</li>
-                <li>Figma</li>
-                <li>Adobe Photoshop</li>
-                <li>Visual Studio Code</li>
-            </ul>
+        <div class="col-12">
+            <h4 class="fw-bold">Software Skills</h4>
+            <div class="d-flex flex-wrap justify-content-start align-items-center">
+                <div class="me-4 text-center">
+                    <img src="figma-icon.png" alt="Figma" style="width: 50px;">
+                    <p>Figma</p>
+                </div>
+                <div class="me-4 text-center">
+                    <img src="ai-icon.png" alt="Adobe Illustrator" style="width: 50px;">
+                    <p>Adobe Illustrator</p>
+                </div>
+                <div class="me-4 text-center">
+                    <img src="ps-icon.png" alt="Adobe Photoshop" style="width: 50px;">
+                    <p>Adobe Photoshop</p>
+                </div>
+                <div class="text-center">
+                    <img src="canva-icon.png" alt="Canva" style="width: 50px;">
+                    <p>Canva</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 
     <!-- Portfolio Section -->
 <div class="container my-5" id="Portfolio">
