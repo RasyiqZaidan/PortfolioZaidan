@@ -144,7 +144,9 @@
     animation-duration: 2s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
+    width: 0; /* Awalnya lebar 0 */
 }
+
 
     </style>
 </head>
@@ -285,21 +287,21 @@
 <div class="container my-5" id="Keahlian">
     <h2 class="text-center">Keahlian</h2>
     <ul>
-      <li>HTML & CSS</li>
+     <li>HTML & CSS</li>
 <div class="progress mb-3">
-    <div class="progress-bar bg-info" style="animation-name: fill80;">80%</div>
+    <div class="progress-bar bg-info" data-width="80">80%</div>
 </div>
 <li>PHP</li>
 <div class="progress mb-3">
-    <div class="progress-bar bg-info" style="animation-name: fill85;">85%</div>
+    <div class="progress-bar bg-info" data-width="85">85%</div>
 </div>
 <li>Laravel</li>
 <div class="progress mb-3">
-    <div class="progress-bar bg-info" style="animation-name: fill70;">70%</div>
+    <div class="progress-bar bg-info" data-width="70">70%</div>
 </div>
 <li>Microsoft Office</li>
 <div class="progress mb-3">
-    <div class="progress-bar bg-info" style="animation-name: fill75;">75%</div>
+    <div class="progress-bar bg-info" data-width="75">75%</div>
 </div>
     </ul>
 </div>
@@ -327,14 +329,32 @@
     </div>
 </footer>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const progressBars = document.querySelectorAll('.progress-bar');
-    progressBars.forEach(bar => {
-        const percentage = bar.getAttribute('data-percentage');
-        bar.style.width = percentage + '%';
-    });
-});
+    // Fungsi untuk mengecek apakah elemen terlihat di viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
 
+    // Fungsi untuk menjalankan animasi
+    function animateProgressBars() {
+        const progressBars = document.querySelectorAll('.progress-bar');
+        progressBars.forEach(bar => {
+            if (isInViewport(bar) && !bar.classList.contains('animated')) {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+                bar.classList.add('animated'); // Tambahkan kelas untuk mencegah animasi ulang
+            }
+        });
+    }
+
+    // Tambahkan event listener scroll
+    window.addEventListener('scroll', animateProgressBars);
+
+    // Jalankan sekali saat halaman dimuat
+    animateProgressBars();
 </script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
