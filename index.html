@@ -54,25 +54,56 @@
     }
 }
 
-        /* Navbar Customization */
-       .navbar {
-    position: fixed; /* Navbar akan tetap di tempat */
-    top: 0; /* Menempel di bagian atas layar */
-    left: 0;
-    right: 0;
-    z-index: 1030; /* Agar tetap di atas elemen lainnya */
-    background-color: #00b8e6; /* Warna latar belakang */
-}
+          /* Navbar Customization */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            background-color: #00b8e6;
+            transition: background-color 0.3s;
+        }
 
-       .navbar-brand {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* Jarak antara elemen logo dan teks */
-}
-body {
-    padding-top: 56px; /* Sesuaikan jika tinggi navbar berubah */
-}
+        .navbar.scrolled {
+            background-color: #005b73; /* Warna lebih gelap saat scroll */
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-link {
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            color: #ffc107;
+        }
+
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .logo-img {
+                display: none;
+            }
+
+            .logo-text {
+                display: inline-block;
+            }
+        }
+
+        body {
+            padding-top: 56px; /* Sesuaikan dengan tinggi navbar */
+        }
         /* Hero Section Styling */
         .hero-section {
             text-align: center;
@@ -318,28 +349,26 @@ h2 {
 </head>
 <body>
    <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="img/logo.png" alt="Logo" class="logo-img">
-        <span class="logo-text d-none">ZAIDAN</span>
-      </a>
-
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Tentang Saya</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Pengalaman">Pengalaman</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Portfolio">Projek</a></li>
-                <li class="nav-item"><a class="nav-link" href="#Keahlian">Keahlian</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Logo" class="logo-img" style="max-height: 40px;">
+                <span class="logo-text">ZAIDAN</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Tentang Saya</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Pengalaman">Pengalaman</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Portfolio">Projek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Keahlian">Keahlian</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
+    
 <!-- About Section -->
 <div class="about-section container my-5" id="About">
     <div class="row align-items-center">
